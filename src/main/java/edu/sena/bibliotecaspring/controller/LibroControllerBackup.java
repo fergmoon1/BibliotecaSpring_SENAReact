@@ -3,16 +3,13 @@ package edu.sena.bibliotecaspring.controller;
 import edu.sena.bibliotecaspring.model.Libro;
 import edu.sena.bibliotecaspring.service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-
 @Controller
 @RequestMapping("/libros")
-public class LibroController {
+public class LibroControllerBackup {
 
     @Autowired
     private LibroService libroService;
