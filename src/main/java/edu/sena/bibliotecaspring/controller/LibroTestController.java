@@ -10,13 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/libros")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 public class LibroTestController {
-
     @Autowired
     private LibroService libroService;
 
-    // GET /api/libros - Obtener todos los libros
     @GetMapping(produces = "application/json")
     public ResponseEntity<List<Libro>> getAllLibros() {
         try {
@@ -30,6 +28,7 @@ public class LibroTestController {
             return ResponseEntity.badRequest().body(null);
         }
     }
+
 
     // GET /api/libros/{id} - Obtener un libro por ID
     @GetMapping(value = "/{id}", produces = "application/json")
