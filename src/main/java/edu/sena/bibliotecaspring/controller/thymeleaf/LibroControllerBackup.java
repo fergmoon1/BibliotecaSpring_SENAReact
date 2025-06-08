@@ -1,4 +1,4 @@
-package edu.sena.bibliotecaspring.controller;
+package edu.sena.bibliotecaspring.controller.thymeleaf;
 
 import edu.sena.bibliotecaspring.model.Libro;
 import edu.sena.bibliotecaspring.service.LibroService;
