@@ -6,17 +6,18 @@ import './App.css';
 
 function App() {
     const [activeSection, setActiveSection] = useState('libros');
+    const [mode, setMode] = useState('list'); // 'list', 'create', 'edit'
 
     const renderSection = () => {
         switch (activeSection) {
             case 'libros':
-                return <LibroList />;
+                return <LibroList mode={mode} setMode={setMode} />;
             case 'revistas':
-                return <RevistaList />;
+                return <RevistaList mode={mode} setMode={setMode} />;
             case 'dvds':
-                return <DvdList />;
+                return <DvdList mode={mode} setMode={setMode} />;
             default:
-                return <LibroList />;
+                return <LibroList mode={mode} setMode={setMode} />;
         }
     };
 
@@ -26,23 +27,31 @@ function App() {
                 <h1 className="text-2xl font-bold">Biblioteca</h1>
                 <nav className="mt-2">
                     <button
-                        onClick={() => setActiveSection('libros')}
+                        onClick={() => { setActiveSection('libros'); setMode('list'); }}
                         className="mr-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-700"
                     >
                         Libros
                     </button>
                     <button
-                        onClick={() => setActiveSection('revistas')}
+                        onClick={() => { setActiveSection('revistas'); setMode('list'); }}
                         className="mr-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-700"
                     >
                         Revistas
                     </button>
                     <button
-                        onClick={() => setActiveSection('dvds')}
+                        onClick={() => { setActiveSection('dvds'); setMode('list'); }}
                         className="p-2 bg-blue-500 text-white rounded hover:bg-blue-700"
                     >
                         DVDs
                     </button>
+                    {mode === 'list' && (
+                        <button
+                            onClick={() => setMode('create')}
+                            className="ml-2 p-2 bg-green-500 text-white rounded hover:bg-green-700"
+                        >
+                            Crear Nuevo
+                        </button>
+                    )}
                 </nav>
             </header>
             <main className="container mx-auto p-4">
