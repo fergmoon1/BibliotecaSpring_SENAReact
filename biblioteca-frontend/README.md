@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+Biblioteca Application
+Descripción
+Esta aplicación es una biblioteca digital que permite gestionar libros, revistas y DVDs. Está dividida en un backend desarrollado con Spring Boot y un frontend creado con React. El backend proporciona una API REST para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar), mientras que el frontend ofrece una interfaz de usuario interactiva para administrar los elementos de la biblioteca.
+Tecnologías Utilizadas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Backend: Spring Boot, Java, JPA/Hibernate, Spring Data JPA
+Frontend: React, Axios, Tailwind CSS
+Base de Datos: H2 (en memoria, para desarrollo)
+Herramientas: Maven, Node.js, npm
 
-## Available Scripts
+Requisitos
 
-In the project directory, you can run:
+Java 17 o superior
+Node.js 14.x o superior
+npm 6.x o superior
+Maven 3.6.x o superior
 
-### `npm start`
+Instalación
+Backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clona el repositorio:git clone <URL_DEL_REPOSITORIO>
+cd BibliotecaSpring
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Configura la base de datos (H2 está incluida por defecto en application.properties).
+Construye y ejecuta el proyecto:mvn spring-boot:run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+El servidor estará disponible en http://localhost:8081.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Frontend
 
-### `npm run eject`
+Navega al directorio del frontend:cd frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instala las dependencias:npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Inicia la aplicación:npm start
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+El frontend estará disponible en http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Uso
 
-### Analyzing the Bundle Size
+Abre http://localhost:3000 en tu navegador.
+Usa los botones de navegación para cambiar entre Libros, Revistas y DVDs.
+Haz clic en "Crear Nuevo" para añadir un elemento, "Editar" para modificar uno existente, o "Eliminar" para borrarlo.
+Los datos se sincronizan automáticamente con la API backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Estructura del Proyecto
 
-### Making a Progressive Web App
+src/main/java/edu/sena/bibliotecaspring/: Código del backend (controladores, servicios, repositorios, entidades).
+src/main/resources/: Configuraciones y archivos estáticos del backend.
+frontend/: Código del frontend (componentes React, estilos, etc.).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Endpoints de la API
 
-### Advanced Configuration
+GET /api/libros: Lista todos los libros.
+POST /api/libros: Crea un nuevo libro.
+PUT /api/libros/{id}: Actualiza un libro.
+DELETE /api/libros/{id}: Elimina un libro.
+(Similares para /api/revistas y /api/dvds).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contribuciones
+Si deseas contribuir, por favor:
 
-### Deployment
+Crea un fork del repositorio.
+Crea una rama para tu característica (git checkout -b feature/nueva-caracteristica).
+Realiza tus cambios y haz commit (git commit -m 'Descripción del cambio').
+Envía un pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Licencia
+Este proyecto está bajo la licencia MIT. Ver el archivo LICENSE para más detalles.
+Agradecimientos
 
-### `npm run build` fails to minify
+Desarrollado con la ayuda de xAI y la comunidad de desarrolladores de Spring y React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
